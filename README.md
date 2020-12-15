@@ -1,10 +1,8 @@
-#Bookmarks App
-
-##Link to Live Page
+Bookmarks App
 
 Link to Live Webpage : https://thinkful-ei-unicorn.github.io/nishathoque-bookmarks-app/
 
-##User Story
+User Story
 
 You can add bookmarks to the bookmark list. Bookmarks contain:
    
