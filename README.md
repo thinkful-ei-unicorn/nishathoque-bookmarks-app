@@ -4,13 +4,13 @@ User Story
 
 You can add bookmarks to the bookmark list. Bookmarks contain:
    
-    Title
+    - Title
    
-    Url link
+    - Url link
    
-    Description
+    - Description
    
-    Rating (1-5)
+    - Rating (1-5)
    
     - A list of my bookmarks when the app is first opened
 
