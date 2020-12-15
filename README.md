@@ -3,11 +3,16 @@
 User Story
 
 You can add bookmarks to the bookmark list. Bookmarks contain:
+   
     Title
+   
     Url link
+   
     Description
+   
     Rating (1-5)
-    A list of my bookmarks when the app is first opened
+   
+    - A list of my bookmarks when the app is first opened
 
 All bookmarks in the list default to a "condensed" view showing only title and rating
 You can click on a bookmark to display the "detailed" view
