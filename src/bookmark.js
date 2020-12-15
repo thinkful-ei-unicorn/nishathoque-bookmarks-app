@@ -11,10 +11,12 @@ function generateMain(){
 		<div class ="error-container"></div>
 		<section id= "mainPage">
 			<div id= "container">
-				<div id="addNewBookmark">
+                <div id="addNewBookmark">
+                    <h4> Add New Bookmark</h4>
 					<button type = "button" id ="add-new-button">Create a Bookmark</button>
-				</div>
-				<div class="dropdownContainer">
+                </div>
+                <div class="dropdownContainer">
+                    <h4> Filter By Stars </h4>
 				<form name="filterByStars" id="filterBookMark" action="/action_page.php">
 					<select name="starRatings" id="starRatings">
 						<option value="" disabled selected>Filter</option>
@@ -35,8 +37,8 @@ function generateMain(){
 						<input type ="text" id ="title" placeholder ="Title of page" required><br><br>
 						<label for = "link">URL Link:</label><br>
 						<input type ="text" id="link" minlength = "5" pattern = "https?://.+" placeholder ="https://" required><br><br>
-						<label for ="description">Description:</label><br>
-						<textarea id ="description" name ="Description" rows="10" cols="30" placeholder="Your description goes here."></textarea><br><br>
+						<label for ="bookmarkDescription">Description:</label><br>
+						<textarea id ="bookmarkDescription" name ="Description" rows="10" cols="30" placeholder="Your description goes here."></textarea><br><br>
 						<label for="rating">Rating:  
 							<select name="rating" id="rating">
 							<option value="" disabled selected>Rating</option>
@@ -62,6 +64,7 @@ function generateMain(){
 
 //generates the list of added bookmarks, with ability to expand with extra details
 function generateBookmarkElement(bookmark){
+    console.log(bookmark)
 	let rating
 	if (bookmark.rating === null){
 		rating = "Was not Rated"
@@ -133,7 +136,7 @@ function handleSaveBookmark(){
 		let userBookmarkInfo = {
 			title: $("#title").val(),
 			url: $("#link").val(),
-			description: $("#description").val(),
+			desc: $("#bookmarkDescription").val(),
 			rating: $("#rating").val(),
 		}
         api.createBookmark(userBookmarkInfo)

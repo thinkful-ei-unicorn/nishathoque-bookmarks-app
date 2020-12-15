@@ -44,7 +44,7 @@ p, li{
 #add-new-button, #starRatings, #filterSubmit, #deleteBookmark, #bookmarkItemExpanded{
     background-color: rgb(163, 125, 163);
     border: none;
-    color: white;
+    color:black;
     padding: 5px;
     text-align: center;
     text-decoration: none;
@@ -85,6 +85,11 @@ h3{
     font-size: 14px;
 }
 
+h4{
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
 .titleInfo{
     font-size: 12px;
 }
@@ -107,6 +112,7 @@ h3{
   h3{
       font-size: 18px;
   }
+
 
   #add-new-button, #starRatings, #filterSubmit, #deleteBookmark, #bookmarkItemExpanded{
     padding: 10px;
