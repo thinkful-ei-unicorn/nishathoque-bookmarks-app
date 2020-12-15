@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 85%;
+    margin: 0 auto;
+    font-size: 18px;
+  }
+
+h1{
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    font-size: 32px;
+    color: rgb(124, 124, 177);
+    margin: 10px
+}
+
+p, li{
+    margin: 0px;
+    font-size: 14px;
+}
+
+.hidden{
+    display: none;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#addNewBookmark{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdownContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#add-new-button, #starRatings, #filterSubmit, #deleteBookmark, #bookmarkItemExpanded{
+    background-color: rgb(163, 125, 163);
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+}
+
+#filterBookMark{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 0px;
+    font-size: 22px;
+}
+
+.js-bookmark-item, #titleInfo{
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    padding: 10px 10px 0px 10px;
+    margin-bottom: 15px;
+}
+
+#editBookmarkList{
+    display: flex;
+    flex-direction: column;
+}
+
+h3{
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 0px;
+    font-size: 14px;
+}
+
+.titleInfo{
+    font-size: 12px;
+}
+
+@media all and (min-width: 600px){
+    body {
+      font-size: 1em;
+    }
+  header{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  h2{
+    align-self: flex-start;
+  }
+
+  h3{
+      font-size: 18px;
+  }
+
+  #add-new-button, #starRatings, #filterSubmit, #deleteBookmark, #bookmarkItemExpanded{
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+  
+  }
