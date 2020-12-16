@@ -27,13 +27,13 @@ p, li{
 
 #container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 #addNewBookmark{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .dropdownContainer{
@@ -50,12 +50,13 @@ p, li{
     text-decoration: none;
     display: inline-block;
     font-size: 10px;
+    margin-bottom: 10px;
 }
 
 #filterBookMark{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content:left;
 }
 
 h2{
@@ -87,12 +88,13 @@ h3{
 
 h4{
     font-size: 12px;
-    margin-bottom: 0px;
+    margin: 8px 0 5px 0;
 }
 
 .titleInfo{
     font-size: 12px;
 }
+
 
 @media all and (min-width: 600px){
     body {
@@ -114,9 +116,15 @@ h4{
   }
 
   h4{
-      font-size: 14px
+      font-size: 14px;
+      padding: 10px;
   }
 
+  #container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
   #add-new-button, #starRatings, #filterSubmit, #deleteBookmark, #bookmarkItemExpanded{
     padding: 10px;

@@ -22,12 +22,12 @@ function generateMain(){
 		<section id= "mainPage">
 			<div id= "container">
                 <div id="addNewBookmark">
-                    <label for="add-new-button"><h4>Add New Bookmark</h4></label>
+                    <h4>Add New Bookmark</h4>
 					<button type = "button" id ="add-new-button">Create a Bookmark</button>
                 </div>
                 <div class="dropdownContainer">
-                <label for = "filterBookMark"><h4> Filter By Stars </h4></label>
-				<form name="filterByStars" id="filterBookMark" action="/action_page.php">
+                <form name="filterByStars" id="filterBookMark" action="/action_page.php">
+                    <label for = "starRatings"><h4> Filter By Stars </h4></label>
 					<select name="starRatings" id="starRatings">
 						<option value="" disabled selected>Filter</option>
 						<option value="1">1 Star</option>
