@@ -35,7 +35,10 @@ function filterByRatings() {
 
 //Defines store filter
 function setFilter(rating) {
-	this.store.filter = rating
+    this.store.filter = rating
+}
+function setError(error) {
+    this.error = error;
 }
 export default {
 	store,
@@ -43,5 +46,6 @@ export default {
 	findById,
 	findAndDelete,
 	filterByRatings,
-	setFilter,
+    setFilter,
+    setError
 }

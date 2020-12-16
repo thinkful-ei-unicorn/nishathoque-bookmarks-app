@@ -2,6 +2,16 @@ import $ from "jquery"
 import store from "./store.js"
 import api from "./api.js"
 
+
+$.fn.extend({
+    serializeJson: function() {
+      const formData = new FormData(this[0]);
+      const output = {};
+      formData.forEach((val, name) => output[name] = val);
+      return JSON.stringify(output);
+    }
+  });
+  
 //generates add new bookmark button, dropdown option to filter by rating, and container for the list of saved bookmarks
 function generateMain(){
 	let template = `
@@ -64,7 +74,6 @@ function generateMain(){
 
 //generates the list of added bookmarks, with ability to expand with extra details
 function generateBookmarkElement(bookmark){
-    console.log(bookmark)
 	let rating
 	if (bookmark.rating === null){
 		rating = "Was not Rated"
@@ -104,27 +113,35 @@ function getBookmarkIdFromElement(bookmarkElement) {
 	return $(bookmarkElement).closest(".js-bookmark-item").data("item-id")
 }
 
-function generateError(message){
-	return `<section class="error-content">
-				<button id ="cancel-error">x</button>
-				<p>${message}</p>
-			</section>`
-}
+function generateError(message) {
+    return `<section class = "error-content">
+              <button id = "cancel">X</button>
+                <p>${message}</p>
+            </section>`
+  }
+  
+  function renderError(){
+    if (store.store.error) {
+      const el = generateError(store.store.error);
+      $('.error-container').html(el)
+    } else {
+      $('.error-container').empty()
+    }
+  }
+  
+  function handleCloseError(){
+    $('.main').on('click', '#cancel', () => {
+      store.setError(null)
+      renderError()
+    })
+  }
 
-function renderError(){
-	if (store.error) {
-		const el = generateError(store.error)
-		$(".error-container").html(el)
-	} else {
-		$(".error-container").empty()
-	}
-}
 
 //all handle functions are event listeners
 function handleCreateBookmark(){
 	$("main").on("click", "#add-new-button", (event) => {
 		event.preventDefault()
-		store.store.adding = true
+        store.store.adding = true
 		render()
 	})
 }
@@ -198,8 +215,8 @@ function render(){
 	$("main").html(generateMain())
 	if (store.store.adding === true) {
 		$(".hidden").removeClass()
-	}
-	generateError()
+    }
+    renderError()
 	const filteredList = store.filterByRatings()
 	const bookmarkString = generateBookmarkString(filteredList)
 	$(".js-bookmark-list").html(bookmarkString)
@@ -211,7 +228,8 @@ function bindEventListeners(){
 	handleSaveBookmark()
 	handleFilterBookmark()
 	handleDeleteBookmark()
-	handleDetailsButton()
+    handleDetailsButton()
+    handleCloseError()
 }
 
 export default {
